@@ -1,0 +1,57 @@
+{
+  "name": "electron-update-window-options",
+  "version": "1.0.0",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es5.js",
+  "typings": "dist/types/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --pretty && rollup -c rollup.config.ts && rimraf compiled",
+    "lint": "tslint -t stylish --project tsconfig.json src/**/*.ts",
+    "format":
+      "prettier --parser typescript --write ./src/**/*.ts & npm run lint -- --fix",
+    "test": "jest",
+    "precommit": "lint-staged",
+    "prepush": "npm test"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --parser typescript --write",
+      "tslint --project tsconfig.json --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/jest": "^21.1.9",
+    "@types/node": "^8.5.1",
+    "husky": "^0.14.3",
+    "jest": "^22.0.4",
+    "lint-staged": "^6.0.0",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.9.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.52.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "tslint-config-prettier": "^1.6.0",
+    "typescript": "^2.6.2"
+  },
+  "files": ["dist"]
+}

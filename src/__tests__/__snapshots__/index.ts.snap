@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`multiple argument options throws when not paired 1`] = `"\\"y\\" is missing its pair(s). You must have \\"x\\",\\"y\\""`;
