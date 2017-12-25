@@ -1,6 +1,6 @@
 {
   "name": "electron-update-window-options",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Update an electron window after it's already been created using the constructor options schema",
   "keywords": [
     "electron",
