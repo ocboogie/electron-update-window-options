@@ -9,7 +9,7 @@ const pkg = require("./package.json");
 const libraryName = "electron-update-window-options";
 
 export default {
-  input: `compiled/index.js`,
+  input: "compiled/index.js",
   output: [
     { file: pkg.main, name: camelCase(libraryName), format: "umd" },
     { file: pkg.module, format: "es" }
