@@ -4,7 +4,8 @@ import { multiArgOptionMap, optionMap } from "./options";
 
 export default function electronUpdateWindowOptions(
   browserWindow: BrowserWindow,
-  options: BrowserWindowConstructorOptions
+  options: BrowserWindowConstructorOptions,
+  multiArgs: boolean = true
 ) {
   Object.entries(options).forEach(([inputKey, inputValue]) => {
     const func = optionMap[inputKey];
@@ -12,7 +13,9 @@ export default function electronUpdateWindowOptions(
       func(browserWindow, inputValue);
     }
   });
-
+  if (!multiArgs) {
+    return;
+  }
   // Multi argument options
   multiArgOptionMap.forEach(specialOption => {
     const optionArgs = specialOption[0];

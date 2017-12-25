@@ -25,4 +25,12 @@ describe("multiple argument options", () => {
       electronUpdateWindowOptions(filler as any, { y: 4 });
     }).toThrowErrorMatchingSnapshot();
   });
+
+  it("can be disabled", () => {
+    const mock = {
+      setPosition: jest.fn()
+    };
+    electronUpdateWindowOptions(mock as any, { x: 4, y: 2 }, false);
+    expect(mock.setPosition.mock.calls.length).toBe(0);
+  });
 });
