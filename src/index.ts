@@ -1,6 +1,6 @@
 import { BrowserWindow, BrowserWindowConstructorOptions } from "electron";
 
-import { mutiArgOptionMap, optionMap } from "./options";
+import { multiArgOptionMap, optionMap } from "./options";
 
 export default function electronUpdateWindowOptions(
   browserWindow: BrowserWindow,
@@ -14,7 +14,7 @@ export default function electronUpdateWindowOptions(
   });
 
   // Multi argument options
-  mutiArgOptionMap.forEach(specialOption => {
+  multiArgOptionMap.forEach(specialOption => {
     const optionArgs = specialOption[0];
 
     const propertyKeys: string[] = [];

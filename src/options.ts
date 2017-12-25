@@ -8,7 +8,7 @@ export interface IOptions {
   [key: string]: (window: BrowserWindow, ...args: any[]) => void;
 }
 
-export type IMutiArgOptionMap = [
+export type IMultiArgOptionMap = [
   [string[], (window: BrowserWindow, ...args: any[]) => void]
 ];
 
@@ -80,7 +80,7 @@ export const optionMap: IOptions = {
   ) => browserWindow.setVibrancy(vibrancy)
 };
 
-export const mutiArgOptionMap: IMutiArgOptionMap = [
+export const multiArgOptionMap: IMultiArgOptionMap = [
   [
     ["width", "height"],
     (browserWindow: BrowserWindow, width: number, height: number) =>
