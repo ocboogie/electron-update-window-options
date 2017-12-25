@@ -2,7 +2,6 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "target": "es5",
-    "module": "es2015",
     "lib": [
       "es2015",
       "es2016",
@@ -16,7 +15,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declarationDir": "dist/types",
-    "outDir": "compiled"
+    "outDir": "dist"
   },
   "include": [
     "src"
