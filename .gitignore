@@ -64,6 +64,7 @@ flow-typed/
 dist/
 release/
 lib/
+compiled/
 
 # Rollup cache
 .rpt2_cache
