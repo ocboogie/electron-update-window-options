@@ -1,26 +1,45 @@
 {
   "name": "electron-update-window-options",
   "version": "1.0.0",
+  "description": "Update an electron window after it's already been created using the constructor options schema",
+  "keywords": [
+    "electron",
+    "electron browser window",
+    "electron window options",
+    "electron window settings",
+    "electron browser window options",
+    "electron browser window settings",
+    "update browser window settings",
+    "update browser window options"
+  ],
   "main": "dist/index.umd.js",
   "module": "dist/index.es5.js",
   "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Eamon mikulec <boogie@mikulec.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/ocboogie/electron-update-window-options.git"
   },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc --pretty && rollup -c rollup.config.ts && rimraf compiled",
-    "lint": "tslint -t stylish --project tsconfig.json src/**/*.ts",
-    "format": "prettier --parser typescript --write ./src/**/*.ts & npm run lint -- --fix",
+    "lint": "tslint -t codeFrame ./src/**/*.ts rollup.config.ts",
+    "format": "prettier --write ./src/**/*.ts & npm run lint -- --fix",
     "test": "jest",
     "precommit": "lint-staged",
     "prepush": "npm test"
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --parser typescript --write",
-      "tslint --project tsconfig.json --fix",
+      "prettier --write",
+      "tslint --fix",
       "git add"
     ]
   },
@@ -33,15 +52,8 @@
       "ts",
       "tsx",
       "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig.json"
-      }
-    }
+      "jsx"
+    ]
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
@@ -59,11 +71,8 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "ts-jest": "^22.0.0",
     "tslint": "^5.8.0",
-    "tslint-config-airbnb": "^5.4.2",
     "tslint-config-prettier": "^1.6.0",
+    "tslint-config-standard": "^7.0.0",
     "typescript": "^2.6.2"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }

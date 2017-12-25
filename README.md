@@ -1,6 +1,6 @@
 # electron-update-window-options
 
-This library allows you to update the electron window options after it's already been created using the constructor options format.
+This library allows you to update an electron window after it's already been created using the constructor options schema.
 
 ```js
 updateWindowOptions(browserWindow, { movable: false });

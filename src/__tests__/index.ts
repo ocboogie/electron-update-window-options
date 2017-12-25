@@ -1,4 +1,4 @@
-import electronUpdateWindowOptions from "../index";
+import electronUpdateWindowOptions from "../";
 
 it("changes browser window", () => {
   const mock = {
