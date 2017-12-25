@@ -4,13 +4,11 @@
   "description": "Update an electron window after it's already been created using the constructor options schema",
   "keywords": [
     "electron",
-    "electron browser window",
-    "electron window options",
-    "electron window settings",
-    "electron browser window options",
-    "electron browser window settings",
-    "update browser window settings",
-    "update browser window options"
+    "browser window",
+    "window",
+    "settings",
+    "options",
+    "update"
   ],
   "main": "dist/index.umd.js",
   "module": "dist/index.es5.js",
